@@ -6,8 +6,8 @@ from random import randint
 COLUMNS = ['id', 'sat_id', 'x_sim', 'y_sim', 'z_sim', 'Vx_sim', 'Vy_sim', 'Vz_sim']
 SATELLITES_NUM = 300
 
-df = pd.read_csv(Path('./data/train.csv'), index_col='id')
-df = df[df['sat_id'] == randint(0, SATELLITES_NUM)] # take random satellite
+df = pd.read_csv(Path('./envs/data/train.csv'), index_col='id', usecols=COLUMNS)
+df = df[df['sat_id'] == randint(0, SATELLITES_NUM)]  # take random satellite
 df.reset_index(drop=True, inplace=True)
 
 
