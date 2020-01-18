@@ -8,6 +8,7 @@ SATELLITES_NUM = 300
 
 df = pd.read_csv(Path('./data/train.csv'), index_col='id')
 df = df[df['sat_id'] == randint(0, SATELLITES_NUM)] # take random satellite
+df.reset_index(drop=True, inplace=True)
 
 
 register(
